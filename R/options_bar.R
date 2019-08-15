@@ -67,7 +67,7 @@ options_bar <- function(input, output, session) {
   volumes <- c(Home = fs::path_home(), harp_getVolumes()())
   default_path <- Sys.getenv("HARP_VERIF_DIR")
   if (nchar(default_path) > 0) {
-    purrr::prepend(volumes, default_path)
+    volumes <- purrr::prepend(volumes, Default = default_path)
   }
 
   shinyFiles::shinyDirChoose(
